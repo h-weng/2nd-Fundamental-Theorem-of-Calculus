@@ -1,0 +1,38 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\begin{document}
+\title{Partial Derivatives}
+\date{\today}
+\pagestyle{empty} 
+\section{Fundamental Theorem of Calculus II}
+	If a function $f$ is continuous on the open interval $I$ containing $a$, then for every $x$ in the interval
+\begin{align}
+	\frac{d}{dx} \int_a^b [f(t) dt] = f(x)
+\end{align}
+\section{Proof}
+	Begin by defining $F$ as
+\begin{align}
+	F(x) &= \int_a^x f(t) dt
+\end{align}
+	Then, you can write by the definition of the derivative
+\begin{align*}
+	F'(x) &= lim_{\Delta x \to 0} \frac{F(x + \Delta x) - F(x)}{\Delta x} \\
+		  &= lim_{\Delta x \to 0} \frac{1}{\Delta x} [\int_{a}^{x + \Delta x} f(t) dt - \int_a^x f(t) dt ] \\
+		  &=  lim_{\Delta x \to 0} \frac{1}{\Delta x} [\int_{a}^{x + \Delta x} f(t) dt + \int_x^a f(t) dt ] \\
+		  &=  lim_{\Delta x \to 0} \frac{1}{\Delta x} [\int_{x}^{x + \Delta x} f(t) dt]
+\end{align*}
+
+	From the Mean Value Theorem for Integrals when $\Delta x > 0$, there exists a number $c$ in the interval $[x, x + \Delta x]$ such that the integral in the expression above is equal to $f(c) \Delta x$.  Because $x \geq c \geq x + \Delta x$, it follows that $c \to x$ as $\Delta x \to 0$.
+	
+\begin{align*}
+	F'(x) = lim_{\Delta x \to 0} [\frac{1}{\Delta x} f(c) \Delta x ] = lim_{\Delta x \to 0} f(c) = f(x)
+\end{align*}
+
+	Using the area model for definite integrals, the approximation
+\begin{align}
+	f(x) \Delta x \approx \int{x}^{x + \Delta x} f(t) dt
+\end{align}	
+
+	can be viewed as the area of the height of $f(x)$ and the width $\Delta x$ is approximately equal to the area of the region between $[x, x + \Delta x]$.
+
+\end{document}
