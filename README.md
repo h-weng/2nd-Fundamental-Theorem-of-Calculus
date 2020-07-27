@@ -1,1 +1,1 @@
-# Fundamental-Theorem-Calculus-II
+# Fundamental-Theorem-of-Calculus-II
